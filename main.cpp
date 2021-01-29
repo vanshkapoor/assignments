@@ -42,19 +42,20 @@ void optionOne()
 b:
   cout<<"Enter a number";
   cin>>t;
-  if(t>total_cnt || t<=0)
+  if(t>total_cnt && t<=0)
   {
     cout<<endl;
     cout<<"Enter no in the database range.";
-    goto b;
+    //goto b;
   }
   fstream file;
   ofstream filewrite;
   string word;
   string filename = "all.last.txt";
   string writefilename = "Output-Database.txt";
+  filewrite.open(writefilename.c_str());
   file.open(filename.c_str());
-  while (file >> word || t>0)
+  while (file >> word && t>0)
   {
     cout << word << "     ";
     filewrite << word << " ";
@@ -72,8 +73,8 @@ void optionTwo()
   int num;
   cout<<endl<<endl;
 c:
-  cout<<"Enter a number in range(10-99)";
-  // cin>>num;
+  cout<<"\n Enter a number in range(10-99)";
+  cin>>num;
   if(num<10 || num>99)
   {
     cout<<endl;
@@ -86,7 +87,9 @@ c:
   string filename = "all.last.txt";
   string writefilename = "Output-Database.txt";
   file.open(filename.c_str());
-  while (file >> word || num>0)
+  filewrite.open(writefilename.c_str());
+
+  while (file >> word && num>0)
   {
     cout << word << "     ";
     filewrite << word << " ";
@@ -103,24 +106,24 @@ c:
 
 void optionThree()
 {
-  string firstname, lastname;  
+  string firstname, lastname;
     cout<<"Enter first string"<<endl;
-    getline (cin, firstname);
-    cout<<"Enter string"<<endl;
-    getline (cin, lastname);
+    cin>>firstname;
+    cout<<"Enter  second string"<<endl;
+    cin>>lastname;
     int res = firstname.compare(lastname);
-      
-    if (res==0) 
-        printf("Strings are equal"); 
-    else 
-        printf("Strings are unequal"); 
+
+    if (res==0)
+        cout<<"Strings are equal";
+    else
+        cout<<"Strings are unequal\n";
 
 }
 
 int main()
 {
   // STEP 1 : READ INPUT FILE AND DISPLAY IT
-  readFile();
+//  readFile();
   cout << endl;
   cout << endl;
 a:
@@ -136,10 +139,10 @@ a:
   switch (choice)
   {
   case 1:
-    
+
     optionOne();
     break;
-  case 2:   
+  case 2:
     optionTwo();
     break;
   case 3:
