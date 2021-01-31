@@ -123,10 +123,10 @@ void optionThree()
 int main()
 {
   // STEP 1 : READ INPUT FILE AND DISPLAY IT
-//  readFile();
-  cout << endl;
-  cout << endl;
+  readFile();
 a:
+  cout << endl;
+  cout << endl;
   cout << "------------------------------------Menu--------------------------------------------------------------------------------------------------------------------" << endl;
   cout << "(1) READ SPECIFIC NUMBER OF LAST NAMES FROM DATABASE" << endl;
   cout << "(2) READ SPECIFIC NUMBER OF LAST NAMES FROM DATABASE IN RANGE(10-99)" << endl;
